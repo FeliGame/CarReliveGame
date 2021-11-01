@@ -1,0 +1,46 @@
+{
+    "poolCapacity": 1,
+    "eventList": [
+        {
+            "id": 2,
+            "content": "平凡地活着",
+            "possibility": 3,
+            "career": "",
+            "stage": "",
+            "heightRatio": 0.4000000059604645,
+            "widthRatio": 0.6000000238418579,
+            "condition": {
+                "ageMax": 2147483647,
+                "ageMin": -2147483648,
+                "eqMax": 2147483647,
+                "eqMin": -2147483648,
+                "hpMax": 2147483647,
+                "hpMin": -2147483648,
+                "iqMax": 2147483647,
+                "iqMin": -2147483648,
+                "kindnessMax": 2147483647,
+                "kindnessMin": -2147483648,
+                "luckMax": 2147483647,
+                "luckMin": -2147483648,
+                "propMax": 2147483647,
+                "propMin": -2147483648,
+                "sanMax": 2147483647,
+                "sanMin": -2147483648,
+                "spMax": 2147483647,
+                "spMin": -2147483648
+            },
+            "influence": {
+                "infAge": "+1",
+                "infEq": "",
+                "infHp": "",
+                "infIq": "",
+                "infKindness": "",
+                "infLifespan": "",
+                "infLuck": "",
+                "infProp": "",
+                "infSan": "",
+                "infSp": ""
+            }
+        }
+    ]
+}
