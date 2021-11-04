@@ -52,16 +52,25 @@ public static class GiftManager
         realizeInfluence(influence.infProp, ref Abilities.Property);
         realizeInfluence(influence.infSan, ref Abilities.Sanity);
 
-        realizeInfluenceSpeed(influence.speedAge, ref Abilities.SpeedAge);
-        realizeInfluenceSpeed(influence.speedEq, ref Abilities.SpeedEq);
-        realizeInfluenceSpeed(influence.speedHp, ref Abilities.SpeedHealth);
-        realizeInfluenceSpeed(influence.speedSp, ref Abilities.SpeedSpirit);
-        realizeInfluenceSpeed(influence.speedIq, ref Abilities.SpeedIq);
-        realizeInfluenceSpeed(influence.speedKindness, ref Abilities.SpeedKindness);
-        realizeInfluenceSpeed(influence.speedLuck, ref Abilities.SpeedLuck);
-        realizeInfluenceSpeed(influence.speedProp, ref Abilities.SpeedProperty);
-        realizeInfluenceSpeed(influence.speedSan, ref Abilities.SpeedSanity);
-        //对来生的影响待加入
+        realizeInfluenceSpeed(influence.speedAgeUp, ref Abilities.SpeedAgeUp);
+        realizeInfluenceSpeed(influence.speedEqUp, ref Abilities.SpeedEqUp);
+        realizeInfluenceSpeed(influence.speedHpUp, ref Abilities.SpeedHealthUp);
+        realizeInfluenceSpeed(influence.speedSpUp, ref Abilities.SpeedSpiritUp);
+        realizeInfluenceSpeed(influence.speedIqUp, ref Abilities.SpeedIqUp);
+        realizeInfluenceSpeed(influence.speedKindnessUp, ref Abilities.SpeedKindnessUp);
+        realizeInfluenceSpeed(influence.speedLuckUp, ref Abilities.SpeedLuckUp);
+        realizeInfluenceSpeed(influence.speedPropUp, ref Abilities.SpeedPropertyUp);
+        realizeInfluenceSpeed(influence.speedSanUp, ref Abilities.SpeedSanityUp);
+
+        realizeInfluenceSpeed(influence.speedAgeDown, ref Abilities.SpeedAgeDown);
+        realizeInfluenceSpeed(influence.speedEqDown, ref Abilities.SpeedEqDown);
+        realizeInfluenceSpeed(influence.speedHpDown, ref Abilities.SpeedHealthDown);
+        realizeInfluenceSpeed(influence.speedSpDown, ref Abilities.SpeedSpiritDown);
+        realizeInfluenceSpeed(influence.speedIqDown, ref Abilities.SpeedIqDown);
+        realizeInfluenceSpeed(influence.speedKindnessDown, ref Abilities.SpeedKindnessDown);
+        realizeInfluenceSpeed(influence.speedLuckDown, ref Abilities.SpeedLuckDown);
+        realizeInfluenceSpeed(influence.speedPropDown, ref Abilities.SpeedPropertyDown);
+        realizeInfluenceSpeed(influence.speedSanDown, ref Abilities.SpeedSanityDown);
     }
 
     private static void realizeInfluence(string influence, ref int target)
@@ -192,5 +201,6 @@ public class SingleGift
 public class GiftInfluence
 {
     public string infAge, infEq, infHp, infIq, infKindness, infLifespan, infLuck, infProp, infSan, infSp;
-    public string speedAge, speedEq, speedHp, speedIq, speedKindness, speedLuck, speedProp, speedSan, speedSp;
+    public string speedAgeUp, speedEqUp, speedHpUp, speedIqUp, speedKindnessUp, speedLuckUp, speedPropUp, speedSanUp, speedSpUp;
+    public string speedAgeDown, speedEqDown, speedHpDown, speedIqDown, speedKindnessDown, speedLuckDown, speedPropDown, speedSanDown, speedSpDown;
 }
