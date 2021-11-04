@@ -10,7 +10,7 @@ public class Abilities : MonoBehaviour  //封装人物属性
 
     public static string Name;
     public static string Gender;
-    public static int Lifespan = 100; //寿命
+    public static float Lifespan = 100; //寿命
     public static float Age = 0;  //年龄
     public static float Property = 0;    //家境
     public static float Health = 0;  //身体状况
