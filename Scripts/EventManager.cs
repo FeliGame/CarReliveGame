@@ -41,31 +41,31 @@ public static class EventManager
     public static void UpdateAbilities(SingleEvent latestEvent)   //更新人物能力
     {
         EventInfluence influence = latestEvent.influence;
-        realizeInfluence(influence.infAge, ref Abilities.Age);
-        realizeInfluence(influence.infEq, ref Abilities.Eq);
-        realizeInfluence(influence.infHp, ref Abilities.Health);
-        realizeInfluence(influence.infProp, ref Abilities.Property);
-        realizeInfluence(influence.infSan, ref Abilities.Sanity);
-        realizeInfluence(influence.infSp, ref Abilities.Spirit);
-        realizeInfluence(influence.infIq, ref Abilities.Iq);
-        realizeInfluence(influence.infKindness, ref Abilities.Kindness);
-        realizeInfluence(influence.infLifespan, ref Abilities.Lifespan);
-        realizeInfluence(influence.infLuck, ref Abilities.Luck);
+        realizeInfluence(influence.infAge, ref Abilities.Age, Abilities.SpeedAgeUp, Abilities.SpeedAgeDown);
+        realizeInfluence(influence.infEq, ref Abilities.Eq, Abilities.SpeedEqUp, Abilities.SpeedEqDown);
+        realizeInfluence(influence.infHp, ref Abilities.Health, Abilities.SpeedHealthUp, Abilities.SpeedHealthDown);
+        realizeInfluence(influence.infProp, ref Abilities.Property, Abilities.SpeedPropertyUp, Abilities.SpeedPropertyDown);
+        realizeInfluence(influence.infSan, ref Abilities.Sanity, Abilities.SpeedSanityUp, Abilities.SpeedSanityDown);
+        realizeInfluence(influence.infSp, ref Abilities.Spirit, Abilities.SpeedSpiritUp, Abilities.SpeedSpiritDown);
+        realizeInfluence(influence.infIq, ref Abilities.Iq, Abilities.SpeedIqUp, Abilities.SpeedIqDown);
+        realizeInfluence(influence.infKindness, ref Abilities.Kindness, Abilities.SpeedKindnessUp, Abilities.SpeedKindnessDown);
+        //realizeInfluence(influence.infLifespan, ref Abilities.Lifespan, Abilities.SpeedLifespanUp, Abilities.SpeedLifespanDown);
+        realizeInfluence(influence.infLuck, ref Abilities.Luck, Abilities.SpeedLuckUp, Abilities.SpeedLuckDown);
     }
 
-    private static void realizeInfluence(string influence, ref int target)
+    private static void realizeInfluence(string influence, ref float target, float increase, float decrease)
     {
         if (influence == null || influence.Length <= 1) return;
         
         switch (influence[0])
         {
-            case '+': target += Int32.Parse(influence.Substring(1));
+            case '+': target += (Int32.Parse(influence.Substring(1)) * increase);
                 break;
-            case '-': target -= Int32.Parse(influence.Substring(1));
+            case '-': target -= (Int32.Parse(influence.Substring(1)) * decrease);
                 break;
-            case '*': target *= Int32.Parse(influence.Substring(1));
+            case '*': target *= (Int32.Parse(influence.Substring(1)) * increase);
                 break;
-            case '/': target /= Int32.Parse(influence.Substring(1));
+            case '/': target /= (Int32.Parse(influence.Substring(1)) * decrease);
                 break;
             case '=': target = Int32.Parse(influence.Substring(1));
                 break;
@@ -90,7 +90,7 @@ public class EventPool
         if(Abilities.Age == 0) {    //出生事件
             List<SingleEvent> birthEvents = new List<SingleEvent>();
             birthEvents.Add(new SingleEvent());
-            birthEvents[0].content = Abilities.myName + "出生了，是" + Abilities.myGender + "孩子";
+            birthEvents[0].content = Abilities.Name + "出生了，是" + Abilities.Gender + "孩子";
             birthEvents[0].heightRatio = 0.5f;
             birthEvents[0].widthRatio = 0.5f;
             birthEvents[0].influence = new EventInfluence();
